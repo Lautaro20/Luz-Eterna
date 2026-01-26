@@ -1,0 +1,32 @@
+.Navbar{
+    background-color:transparent;
+    color: black;
+    display: flex;
+    gap: 700px;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+}
+
+.LogoNavbar{
+    width: 170px;
+    height: auto;
+    padding-left: 20px;
+}
+
+.UlNavbar{
+    font-family: "montserrat", sans-serif;
+    font-weight: 700;
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+
+.UlNavbar_elemento a{
+    text-decoration: none;
+    color: white;
+}
+
+.UlNavbar_elemento a:hover{
+    color: blue;
+}

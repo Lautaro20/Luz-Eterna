@@ -1,0 +1,131 @@
+.Guido{ 
+    background-color: black; 
+    color: white; 
+    
+    display: grid;
+    grid-template-columns: 360px 360px 360px 432px;
+    grid-template-rows: 200px 200px 200px 200px;
+} 
+
+.Guido h3{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-left: 40px;
+}
+
+
+.Contenedor.Guido{ 
+    background-color: black; 
+    font-family: "Archivo"; 
+    font-weight: 400; 
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-row-end: 5
+} 
+
+.Contenedor.Guido p{
+    line-height: 1.6;
+}
+
+.Guido img{ 
+    width: 600px; 
+    height: auto; 
+    display: block;
+    border-radius: 12px;
+} 
+
+.Guido p{
+    margin-left: 60px;
+}
+
+.Titulo{ 
+    font-family: "montserrat"; 
+    font-weight: 700; 
+    background-color: black; 
+    text-align: justify; 
+    font-size: 40px;
+}
+
+
+.Leonor{ 
+    background-color: black; 
+    color: white; 
+    direction: rtl;
+    display: grid;
+    grid-template-columns: 360px 360px 360px 432px;
+    grid-template-rows: 200px 200px 200px 200px;
+} 
+
+.Leonor h3{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-right: 130px;
+}
+
+
+
+.Contenedor.Leonor{ 
+    background-color: black; 
+    font-family: "Archivo"; 
+    font-weight: 400; 
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-row-end: 5
+} 
+
+.Contenedor.Leonor p{
+    line-height: 1.6;
+}
+
+.Leonor img{ 
+    width: 500px; 
+    height: auto; 
+    display: block;
+    border-radius: 12px;
+} 
+
+.Leonor p{
+    margin-right: 60px;
+    text-align: left;
+}
+
+.Buffo{
+   width: 600px; 
+   position: relative;
+    height: auto; 
+     
+    grid-row-start: 1;
+    grid-column-start: 3; 
+    grid-row-end: 5
+}
+
+.Buffo.Guido{
+    margin: 40px 0 0 130px;
+}
+
+.Buffo.Leonor{
+    margin:40px 190px 0 0 ;
+}
+
+.ImgBuffo.arriba{
+    position: absolute;
+    top: 0;
+    left: auto;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.ImgBuffo.arriba.visible{
+    opacity: 1;
+    z-index: 2;
+}
