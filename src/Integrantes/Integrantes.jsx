@@ -1,27 +1,32 @@
 import "./Integrantes.css"
 import { cardIntegrantes } from "../Data/Dataintegrantes"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 
 export const Integrantes = () => {
 
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
 
-  const trackRef = useRef(null)
+ 
   const startX = useRef(0)
 
   const total = cardIntegrantes.length
 
   // ---- CONTROLES ----
-  const next = () => setIndex(i => (i + 1) % total)
-  const prev = () => setIndex(i => (i - 1 + total) % total)
+  const next = useCallback(() => {
+    setIndex(i => (i + 1) % total)
+  }, [total])
+
+  const prev = useCallback(() => {
+    setIndex(i => (i - 1 + total) % total)
+  }, [total])
 
   // ---- AUTOPLAY ----
   useEffect(() => {
     if (paused) return
     const id = setInterval(next, 3500)
     return () => clearInterval(id)
-  }, [paused])
+  }, [paused, next])
 
   // ---- SWIPE ----
   const handleTouchStart = e => {
