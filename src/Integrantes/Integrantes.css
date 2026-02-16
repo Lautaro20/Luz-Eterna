@@ -1,105 +1,145 @@
 .SobreNosotros{
-    background-color: black;
-    color: white;
-    padding: 50px;
-
+  background:black;
+  color:white;
+  padding:80px 20px;
+  text-align:center;
 }
 
-.SobreNosotros h3{
-
-
-    font-family: "montserrat"; 
-    font-weight: 700; 
-    background-color: black; 
-    text-align: center; 
-    font-size: 40px;
+.SobreNosotros h2{
+  font-size:40px;
+  margin-bottom:40px;
 }
 
-
-
-.integrantes{ 
-    grid-column-start: 5;
-    background-color: black;
-    width: 900px;
-    margin: auto;
-    overflow: hidden;   
-    position: relative; 
-    color: white;
-} 
-
-
-.track {
-    display: flex;
-    gap: 40px;
-    transition: transform 0.5s ease;
+/* SLIDER */
+.slider{
+  position:relative;
+  overflow:hidden;
+  max-width:1100px;
+  margin:auto;
 }
 
-.cardintegrante{ 
-    background-color: black; 
-    font-family: "archivo"; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    width: 500px; 
-    height: auto; 
-    flex-shrink: 0;   /* CLAVE */
-} 
-.cardintegrante img{ 
-    width: 400px; 
-    height: 500px; 
-    border-radius: 10px; 
-    margin: 30px 0 0 0; 
-    object-fit: cover;
-} 
-.cardintegrante h3{ 
-    font-size: 20px; 
-    margin: 20px 0 10px 
+/* TRACK */
+.track{
+  display:flex;
+  transition: transform .5s cubic-bezier(.77,0,.18,1);
 }
 
-.cardintegrante a{
-    text-decoration: none;
-    color: white;
-    margin-bottom: 20px
+/* CARD */
+.card{
+  min-width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  opacity:.4;
+  transform: scale(.9);
+  transition:.4s;
 }
 
-.cardintegrante i{
-    color: #D62976;
+.card.active{
+  opacity:1;
+  transform: scale(1);
 }
 
+/* IMG */
+.card img{
+  width:350px;
+  height:420px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* TEXT */
+.card h3{
+  margin-top:20px;
+  font-size:22px;
+}
+
+.card p{
+  opacity:.7;
+}
+
+.card a{
+  margin-top:10px;
+  color:#D62976;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* BOTONES */
 .btn{
-    position: absolute;
-    width: 40px;
-    height: auto;
-    z-index: 4;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 40px;
-    color: white;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  border:none;
+  background:none;
+  color:white;
+  cursor:pointer;
+  z-index:2;
+  padding:10px;
 }
 
-.btn.next{
-    left: 95.55%;
-    top: 45%;
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .card img{
+    width:80vw;
+    height:60vh;
+  }
+
+  .btn{
+    font-size:30px;
+  }
 }
 
-.btn.prev{
-    top: 45%;
+.layout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  max-width:1300px;
+  margin:auto;
 }
 
-
-.cardintegrante:not(.active) {
-  filter: blur(2px);
-  opacity: 0.5;
+/* INFO */
+.info{
+  max-width:400px;
+  text-align:left;
 }
 
-.cardintegrante:not(.active)::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.6)
-  );
+.info h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.info p{
+  opacity:.8;
+  line-height:1.6;
+}
+
+/* SLIDER */
+.slider{
+  position:relative;
+  overflow:hidden;
+  width:500px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .layout{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .info{
+    text-align:center;
+  }
+
+  .slider{
+    width:100%;
+  }
 }

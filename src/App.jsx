@@ -13,8 +13,6 @@ function App() {
         <Ilustracion/>
         <FamiliaBuffo />
         <Capilla/>
-        
-       
        <Integrantes />
     </div>
   );

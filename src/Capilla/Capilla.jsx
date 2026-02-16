@@ -1,69 +1,31 @@
-import { useEffect, useState } from "react"
 import { Cardcapilla } from "../Data/Datacapilla"
-import  "./Capilla.css"
+import "./Capilla.css"
 
 export const Capilla = () => {
 
-    const [listaCapilla, setListaCapilla] = useState([])
-    const [mostrar, setMostrar] = useState(false)
+  return (
+    <section className="capilla">
 
-    const pedirCapilla = () => {
-     return new Promise((resolve, reject) => {
-            resolve(Cardcapilla)
-        })
-    }
+      {Cardcapilla.map((item,i)=>(
+        <div className="capillaBox" key={i}>
 
-    const Cambio = () => {
-        setMostrar(false)
-    }
+          <img src={item.img} alt={item.titulo} className="capillaImg"/>
 
-    const Cambion = () => {
-        setMostrar(true)
-    }
+          <div className="capillaOverlay">
 
-    useEffect(() => {
-        pedirCapilla()
-            .then((res) => {
-            setListaCapilla(res)
-        }) 
+            <h2>{item.titulo}</h2>
 
-        const Contar = setTimeout(() => {
-            setMostrar(true)
-        },5000)
+            <div className="capillaTextos">
+              <p>{item.texto}</p>
+              <p>{item.texto2}</p>
+              <p>{item.texto3}</p>
+            </div>
 
-        return () => clearTimeout(Contar)
-            
-    },[])
+          </div>
 
-    
-
-
-    return(
-        <div>
-            {listaCapilla.length > 0 && listaCapilla.map((Capilla) => {
-                return(
-                    <div className="ContenedorCapilla" onMouseEnter={Cambio} onMouseLeave={Cambion}>
-                        <h3 className="Capillatitulo"><em>{Capilla.titulo}</em></h3>
-                        <p className="Capillatexto">{Capilla.texto}</p>
-                        <p className="Capillatexto2">{Capilla.texto2}</p>
-                        <p className="Capillatexto3">{Capilla.texto3}</p>
-                        <img src={Capilla.img} alt="" className="Capillaimg" />
-
-                        
-                        
-                        <video src={Capilla.vid}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                preload="auto"
-                                className={`Capillavid ${mostrar ? "aparecer": ""}`}
-                        ></video>
-                    
-                        
-                    </div>
-                )
-            })}
         </div>
-    )
+      ))}
+
+    </section>
+  )
 }

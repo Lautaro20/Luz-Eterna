@@ -1,71 +1,83 @@
 import "./Integrantes.css"
-import {cardIntegrantes} from "../Data/Dataintegrantes"
-import { useEffect, useState } from "react"
+import { cardIntegrantes } from "../Data/Dataintegrantes"
+import { useEffect, useRef, useState } from "react"
 
-export const Integrantes= () => {
+export const Integrantes = () => {
 
-    const [listaIntegrantes, setListaintegrantes] = useState([])
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
 
-    const CARD_WIDTH = 500;
-    const GAP = 40; 
+  const trackRef = useRef(null)
+  const startX = useRef(0)
 
-    const next = () => {
-        setIndex((prev) =>
-            prev === listaIntegrantes.length - 1 ? 0 : prev + 1
-        );
-    };
+  const total = cardIntegrantes.length
 
-    const prev = () => {
-        setIndex((prev) =>
-            prev === 0 ? listaIntegrantes.length - 1 : prev - 1
-        );
-    };
+  // ---- CONTROLES ----
+  const next = () => setIndex(i => (i + 1) % total)
+  const prev = () => setIndex(i => (i - 1 + total) % total)
 
-    const pedirIntegrantes = () => {
-       return new Promise((resolve, reject) => {
-            resolve(cardIntegrantes)
-       })
-    }
+  // ---- AUTOPLAY ----
+  useEffect(() => {
+    if (paused) return
+    const id = setInterval(next, 3500)
+    return () => clearInterval(id)
+  }, [paused])
 
+  // ---- SWIPE ----
+  const handleTouchStart = e => {
+    startX.current = e.touches[0].clientX
+  }
 
-    useEffect(() => {
-        pedirIntegrantes()
-        .then((res) => {
-            setListaintegrantes(res)
-        })
+  const handleTouchEnd = e => {
+    const diff = startX.current - e.changedTouches[0].clientX
+    if (diff > 50) next()
+    if (diff < -50) prev()
+  }
 
+  return (
+    <section className="SobreNosotros">
 
-    },[])
+  <div className="layout">
 
-    
+    {/* COLUMNA INFO */}
+    <div className="info">
+      <h2>Equipo</h2>
+      <p>
+        Somos un grupo creativo enfocado en desarrollar proyectos audiovisuales
+        y contenido digital. Nuestro objetivo es innovar y crear experiencias únicas.
+      </p>
+    </div>
 
-    return (
-        <div className="SobreNosotros">
-            <h3>Equipo</h3>
+    {/* COLUMNA SLIDER */}
+    <div
+      className="slider"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
 
-            <div className="integrantes">
-                <button className="btn prev" onClick={prev}><i class="fa-solid fa-caret-down fa-rotate-90"></i></button>
-                <button className="btn next" onClick={next}><i class="fa-solid fa-caret-down fa-rotate-270"></i></button>
-                <div className="track" style={{ transform: `translateX(calc(50% - ${(index + 0.5) * (CARD_WIDTH + GAP)}px))` }}>
-                    
-                    { listaIntegrantes.length > 0 && listaIntegrantes.map((integrante, i) => {
-                            const isActive = i === index;
-                            return(
-                                <div className={`cardintegrante ${isActive ? "active" : ""}`} key={i}>
-                                    <img src={integrante.img} alt="" />
-                                    <h3>{integrante.nombre}</h3>
-                                    <p>{integrante.rol}</p>
-                                    <a href={`https://www.instagram.com/${integrante.ig}/`} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> {integrante.ig}</a>
-                                </div>
-                            )
-                        })
-                    }   
-                </div>
-            
-            </div>
+      <button className="btn prev" onClick={prev}>‹</button>
+      <button className="btn next" onClick={next}>›</button>
 
-        </div>
-        
-    )
-} 
+      <div
+        className="track"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+      >
+        {cardIntegrantes.map((p, i) => (
+          <div className={`card ${i === index ? "active" : ""}`} key={i}>
+            <img src={p.img} alt={p.nombre}/>
+            <h3>{p.nombre}</h3>
+            <p>{p.rol}</p>
+            <p><i class="fa-brands fa-instagram"></i>{p.ig}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  )
+}

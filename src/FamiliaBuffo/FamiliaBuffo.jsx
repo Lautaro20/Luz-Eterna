@@ -1,53 +1,31 @@
-import { useEffect, useState } from "react"
 import { cardBuffos } from "../Data/Databuffos"
 import "./FamiliaBuffo.css"
 
 export const FamiliaBuffo = () => {
 
-    const [listaBuffos, setListaBuffos] = useState([])
-    const [mostrar, setMostrar] = useState(false)
+  return (
+    <section className="familia">
 
-    const PedirFamilia = () => {
-        return new Promise((resolve, reject) => {
-            resolve(cardBuffos)
-        })
-    }
+      {cardBuffos.map((item,i)=>(
+        <div
+          className={`bloque ${i % 2 === 1 ? "invertido" : ""}`}
+          key={i}
+        >
 
-    useEffect(() => {
-        PedirFamilia()
-        .then((res) => {
-            setListaBuffos(res);
-        })
+          <div className="texto">
+            <h2>{item.titulo}</h2>
+            <p>{item.texto1}</p>
+            <p>{item.texto2}</p>
+          </div>
 
-        const Contar = setInterval(() => {
-            setMostrar(prev => !prev)
-        },5000)
+          <div className="imagenes">
+            <img src={item.img1} alt="" />
+            <img src={item.img2} alt="" className="superpuesta"/>
+          </div>
 
-        return () => clearInterval(Contar)
-    }, [])
-
-    
-
-    return(
-        <div>
-            {listaBuffos.length > 0 && 
-                listaBuffos.map((Buffo) => {
-                    return(
-                        <div className={Buffo.id}>
-                            <h3 className="Titulo">{Buffo.titulo? Buffo.titulo : ""}</h3>
-                            <div className={`Contenedor ${Buffo.id}`}>
-                                <p>{Buffo.texto1? Buffo.texto1 : ""}</p>
-                                <p>{Buffo.texto2? Buffo.texto2 : ""}</p>
-                            </div>
-                            <div className={`Buffo ${Buffo.id}`}>
-                                <img src={Buffo.img1} alt="" className="ImgBuffo abajo" />
-                                <img src={Buffo.img2} alt="" className={`ImgBuffo arriba ${mostrar? "visible" : ""}`}/>
-                            </div>
-                            
-                        </div>
-                    )
-                }) 
-            }
         </div>
-    )
+      ))}
+
+    </section>
+  )
 }

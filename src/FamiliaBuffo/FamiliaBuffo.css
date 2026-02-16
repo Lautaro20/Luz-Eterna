@@ -1,131 +1,79 @@
-.Guido{ 
-    background-color: black; 
-    color: white; 
-    
-    display: grid;
-    grid-template-columns: 360px 360px 360px 432px;
-    grid-template-rows: 200px 200px 200px 200px;
-} 
-
-.Guido h3{
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-column-end: 3;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding-left: 40px;
+.familia{
+  background-color: black;
+  color:white;
+  padding:80px 20px;
 }
 
-
-.Contenedor.Guido{ 
-    background-color: black; 
-    font-family: "Archivo"; 
-    font-weight: 400; 
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-column-end: 3;
-    grid-row-end: 5
-} 
-
-.Contenedor.Guido p{
-    line-height: 1.6;
+/* BLOQUE */
+.bloque{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:80px;
+  margin-bottom:100px;
+  flex-wrap:wrap;
 }
 
-.Guido img{ 
-    width: 600px; 
-    height: auto; 
-    display: block;
-    border-radius: 12px;
-} 
-
-.Guido p{
-    margin-left: 60px;
+/* INVERTIDO */
+.bloque.invertido{
+  flex-direction:row-reverse;
 }
 
-.Titulo{ 
-    font-family: "montserrat"; 
-    font-weight: 700; 
-    background-color: black; 
-    text-align: justify; 
-    font-size: 40px;
+/* TEXTO */
+.texto{
+  max-width:500px;
 }
 
-
-.Leonor{ 
-    background-color: black; 
-    color: white; 
-    direction: rtl;
-    display: grid;
-    grid-template-columns: 360px 360px 360px 432px;
-    grid-template-rows: 200px 200px 200px 200px;
-} 
-
-.Leonor h3{
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-column-end: 3;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding-right: 130px;
+.texto h2{
+  font-size:40px;
+  margin-bottom:20px;
 }
 
-
-
-.Contenedor.Leonor{ 
-    background-color: black; 
-    font-family: "Archivo"; 
-    font-weight: 400; 
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-column-end: 3;
-    grid-row-end: 5
-} 
-
-.Contenedor.Leonor p{
-    line-height: 1.6;
+.texto p{
+  line-height:1.6;
+  margin-bottom:15px;
 }
 
-.Leonor img{ 
-    width: 500px; 
-    height: auto; 
-    display: block;
-    border-radius: 12px;
-} 
-
-.Leonor p{
-    margin-right: 60px;
-    text-align: left;
+/* IMAGENES */
+.imagenes{
+  position:relative;
+  width:400px;
 }
 
-.Buffo{
-   width: 600px; 
-   position: relative;
-    height: auto; 
-     
-    grid-row-start: 1;
-    grid-column-start: 3; 
-    grid-row-end: 5
+.imagenes img{
+  width:100%;
+  border-radius:12px;
+  display:block;
 }
 
-.Buffo.Guido{
-    margin: 40px 0 0 130px;
+/* SUPERPUESTA */
+.superpuesta{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:.0;
+  transition:.6s;
 }
 
-.Buffo.Leonor{
-    margin:40px 190px 0 0 ;
+/* HOVER */
+.imagenes:hover .superpuesta{
+  opacity:1;
 }
 
-.ImgBuffo.arriba{
-    position: absolute;
-    top: 0;
-    left: auto;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
+/* MOBILE */
+@media(max-width:900px){
 
-.ImgBuffo.arriba.visible{
-    opacity: 1;
-    z-index: 2;
+  .bloque{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+
+  .bloque.invertido{
+    flex-direction:column;
+  }
+
+  .imagenes{
+    width:90%;
+  }
 }
