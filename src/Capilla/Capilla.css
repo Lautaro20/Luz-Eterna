@@ -43,14 +43,36 @@
 }
 
 /* MOBILE */
-@media(max-width:768px){
+@media (max-width:768px){
 
+  /* quitar overlay absoluto */
   .capillaOverlay{
+    position:static;
     align-items:center;
     text-align:center;
+    padding:20px;
+    background:black; /* opcional fondo */
   }
 
+  /* contenedor se vuelve vertical */
+  .capillaBox{
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* imagen en medio */
+  .capillaImg{
+    order:2;
+  }
+
+  /* titulo arriba */
+  .capillaOverlay h2{
+    order:1;
+  }
+
+  /* textos abajo */
   .capillaTextos{
+    order:3;
     max-width:90%;
   }
 }

@@ -15,6 +15,7 @@
 
 .LogoNavbar{
     width: 150px;
+    transform: translateY(5px)
 }
 
 .UlNavbar{
@@ -22,16 +23,21 @@
     font-weight: 700;
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 20px;
 }
 
-.UlNavbar_elemento a{
+.UlNavbar_elemento button{
     text-decoration: none;
     color: white;
     font-size: clamp(14px,1.2vw,18px);
+    background:none;
+    border:none;
+    font-family: "montserrat", sans-serif;
+    font-weight:700;
+    cursor:pointer;
 }
 
-.UlNavbar_elemento a:hover{
+.UlNavbar_elemento button:hover{
     color:#3b82f6;
 }
 
@@ -51,6 +57,7 @@
         display:flex;
         position:relative;
         z-index:60;
+        margin-right: 15px;
     }
 
     .UlNavbar{

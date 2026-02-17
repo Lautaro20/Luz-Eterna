@@ -10,6 +10,21 @@
   margin-bottom:40px;
 }
 
+.ig{
+  margin-right:3px;
+  color:#E1306C;
+}
+
+.ig-text{
+  color:white;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.ig-text:hover{
+  color:#E1306C;
+}
+
 /* SLIDER */
 .slider{
   position:relative;
@@ -58,12 +73,7 @@
   opacity:.7;
 }
 
-.card a{
-  margin-top:10px;
-  color:#D62976;
-  text-decoration:none;
-  font-weight:bold;
-}
+
 
 /* BOTONES */
 .btn{

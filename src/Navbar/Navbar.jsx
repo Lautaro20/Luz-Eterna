@@ -9,6 +9,14 @@ export const Navbar = () => {
         setAbierto(!abierto)
     }
 
+    const irA = (id) => {
+        const el = document.getElementById(id)
+        if (el){
+            el.scrollIntoView({ behavior: "smooth"})
+        }
+        setAbierto(false)
+    }
+
     useEffect(()=>{
         if(abierto){
             document.body.style.overflow = "hidden"
@@ -20,17 +28,19 @@ export const Navbar = () => {
     return(
         <div>
             <nav className="Navbar">
-                <h2 className="TituloNav"><a href="/"><img src="/LogosPng/logorecord2.png" alt="" className="LogoNavbar"/></a></h2>
+                <h2 className="TituloNav"><a href="/"><img src="/LogosPng/logos _sin bajada_MesaDeTrabajo1.png" alt="" className="LogoNavbar"/></a></h2>
                 
                 <div className={`Hamburguesa ${abierto? "activo" : ""}`} onClick={toggleMenu}>
                     <i className={`fa-solid ${abierto ? "fa-xmark" : "fa-bars"}`}></i>
                 </div>
 
                 <ul className={`UlNavbar ${abierto ? "mostrar" : ""}`}>
-                    <li className="UlNavbar_elemento"><a href="/">Guido Guffo</a></li>
-                    <li className="UlNavbar_elemento"><a href="/">Sobre Nosotros</a></li>
-                    <li className="UlNavbar_elemento"><a href="/">Proyectos</a></li>
-                    <li className="UlNavbar_elemento"><a href="/">Donaciones</a></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Inicio")} }>Inicio</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Inicio")}}>Cortometraje</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Familia-Buffo")}}>Familia Buffo</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Capilla")}}>Capilla</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Sobre-Nosotros")}}>Sobre Nosotros</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Inicio")}}>Donaciones</button></li>
                 </ul>
             </nav>
         </div>

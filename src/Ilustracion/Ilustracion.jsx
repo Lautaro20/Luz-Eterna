@@ -28,8 +28,8 @@ export const Ilustracion = () => {
     },[])
 
     return(
-        <div className="IlustracionContenedor">
-            <img src="/LogosPng/logos_Mesadetrabajo1copia.png" alt="" className="Logoprincipal"/>
+        <section id="Inicio" className="IlustracionContenedor">
+            <img src="/LogosPng/logo_MesaDeTrabajo.png" alt="" className="Logoprincipal"/>
             {
                 listaIntegrantes.length > 0 && listaIntegrantes.map((Ilustracion) => {
                    return(
@@ -40,7 +40,7 @@ export const Ilustracion = () => {
                     )
                 })
             }
-        </div>
+        </section>
     )
 
 }

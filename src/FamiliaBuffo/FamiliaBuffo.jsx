@@ -4,7 +4,7 @@ import "./FamiliaBuffo.css"
 export const FamiliaBuffo = () => {
 
   return (
-    <section className="familia">
+    <section id="Familia-Buffo" className="familia">
 
       {cardBuffos.map((item,i)=>(
         <div

@@ -4,7 +4,7 @@ import "./Capilla.css"
 export const Capilla = () => {
 
   return (
-    <section className="capilla">
+    <section id="Capilla" className="capilla">
 
       {Cardcapilla.map((item,i)=>(
         <div className="capillaBox" key={i}>

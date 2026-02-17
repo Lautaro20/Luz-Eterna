@@ -40,7 +40,7 @@ export const Integrantes = () => {
   }
 
   return (
-    <section className="SobreNosotros">
+    <section id="Sobre-Nosotros" className="SobreNosotros">
 
   <div className="layout">
 
@@ -74,7 +74,7 @@ export const Integrantes = () => {
             <img src={p.img} alt={p.nombre}/>
             <h3>{p.nombre}</h3>
             <p>{p.rol}</p>
-            <p><i class="fa-brands fa-instagram"></i>{p.ig}</p>
+            <p><i  className="ig fa-brands fa-instagram"></i>  <a href={`https://instagram.com/${p.ig}`} target="_blank" rel="noopener noreferrer" className="ig-text"> {p.ig} </a></p>
           </div>
         ))}
       </div>
