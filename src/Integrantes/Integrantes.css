@@ -1,43 +1,86 @@
 .SobreNosotros{
-  background:black;
+  background:linear-gradient(to bottom,#000,#050505);
   color:white;
-  padding:80px 20px;
+  padding:120px 20px;
   text-align:center;
-  
 }
 
+/* TITULO */
 .SobreNosotros h2{
-  font-size:40px;
-  margin-bottom:40px;
+  font-size:48px;
+  margin-bottom:60px;
+  letter-spacing:1px;
 }
 
+/* ICONOS */
 .ig{
-  margin-right:3px;
+  margin-right:6px;
   color:#E1306C;
+  transition:.3s;
 }
 
-.ig-text{
+.fa-spotify{
+  margin-right:6px;
+  color:#63e6be;
+  transition:.3s;
+}
+
+/* LINKS */
+.ig-text,
+.ig-textSpotify{
   color:white;
   text-decoration:none;
-  transition:.2s;
+  transition:.25s;
+  font-weight:500;
 }
 
 .ig-text:hover{
   color:#E1306C;
 }
 
+.ig-textSpotify:hover{
+  color:#63e6be;
+}
+
+/* LAYOUT GENERAL */
+.layout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:80px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* INFO */
+.info{
+  max-width:420px;
+  text-align:left;
+  margin-top:-20px;
+}
+
+.info h2{
+  font-size:44px;
+  margin-bottom:30px;
+}
+
+.info p{
+  opacity:.75;
+  line-height:1.7;
+  font-size:17px;
+}
+
 /* SLIDER */
 .slider{
   position:relative;
   overflow:hidden;
-  max-width:1100px;
-  margin:auto;
+  width:520px;
 }
 
 /* TRACK */
 .track{
   display:flex;
-  transition: transform .5s cubic-bezier(.77,0,.18,1);
+  transition: transform .7s cubic-bezier(.77,0,.18,1);
 }
 
 /* CARD */
@@ -46,9 +89,9 @@
   display:flex;
   flex-direction:column;
   align-items:center;
-  opacity:.4;
-  transform: scale(.9);
-  transition:.4s;
+  opacity:.35;
+  transform: scale(.85);
+  transition:.5s;
 }
 
 .card.active{
@@ -56,95 +99,59 @@
   transform: scale(1);
 }
 
-/* IMG */
+/* IMAGEN */
 .card img{
-  width:350px;
-  height:420px;
+  width:360px;
+  height:460px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:18px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+    0 20px 60px rgba(0,0,0,.7);
+  transition:.5s;
 }
 
-/* TEXT */
+.card.active img{
+  transform:scale(1.02);
+}
+
+/* TEXTO CARD */
 .card h3{
-  margin-top:20px;
-  font-size:22px;
+  margin-top:25px;
+  font-size:24px;
+  letter-spacing:.5px;
 }
 
 .card p{
   opacity:.7;
+  margin-top:5px;
+  font-size:15px;
 }
-
-
 
 /* BOTONES */
 .btn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:40px;
+  font-size:42px;
   border:none;
-  background:none;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(4px);
   color:white;
   cursor:pointer;
   z-index:2;
-  padding:10px;
+  padding:16px;
+  border-radius:12px;
+  transition:.3s;
 }
 
-.prev{ left:10px; }
-.next{ right:10px; }
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .card img{
-    width:80vw;
-    height:60vh;
-  }
-
-  .btn{
-    font-size:30px;
-  }
+.btn:hover{
+  background:rgba(255,255,255,.15);
+  color: #3b82f6;
 }
 
-.layout{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:60px;
-  max-width:1300px;
-  margin:auto;
-  transform: translateX(80px);
-}
-
-/* INFO */
-.info{
-  max-width:400px;
-  text-align:left;
-  margin-top:-60px; /* mueve todo hacia arriba */
-}
-
-
-.info h2{
-  font-size:42px;
-  margin-bottom:60px;
-}
-
-.info p{
-  opacity:.8;
-
-  max-width:400px;
-  line-height:1.6;
-}
-
-
-
-/* SLIDER */
-.slider{
-  position:relative;
-  overflow:hidden;
-  width:500px;
-  margin-left:auto;
-}
+.prev{ left:-10px; }
+.next{ right:-10px; }
 
 /* MOBILE */
 @media(max-width:900px){
@@ -152,13 +159,38 @@
   .layout{
     flex-direction:column;
     text-align:center;
+    gap:60px;
   }
 
   .info{
     text-align:center;
+    margin-top:0;
   }
 
   .slider{
     width:100%;
   }
+
+}
+
+/* MOBILE CHICO */
+@media(max-width:600px){
+
+  .SobreNosotros{
+    padding:90px 15px;
+  }
+
+  .SobreNosotros h2{
+    font-size:36px;
+  }
+
+  .card img{
+    width:85vw;
+    height:55vh;
+  }
+
+  .btn{
+    font-size:32px;
+  }
+
 }

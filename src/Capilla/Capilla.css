@@ -42,6 +42,12 @@
   font-size:clamp(14px,1.2vw,18px);
 }
 
+.Mapita iframe{
+  width:100%;
+  height:450px;
+}
+
+
 /* MOBILE */
 @media (max-width:768px){
 

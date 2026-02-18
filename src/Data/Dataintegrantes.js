@@ -17,6 +17,7 @@ export const cardIntegrantes = [
     id: 2,
     nombre: "Daniel Villegas",
     rol: "Director de Musica",
+    ig: "Daniel Villegas",
     img : img2,
 },
 {

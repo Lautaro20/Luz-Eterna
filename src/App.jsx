@@ -6,6 +6,7 @@ import { FamiliaBuffo } from './FamiliaBuffo/FamiliaBuffo';
 import { Capilla } from './Capilla/Capilla';
 import { Ilustracion } from './Ilustracion/Ilustracion';
 import { Cortometraje } from './Cortometraje/Cortometraje';
+import { Donaciones } from './Donaciones/Donaciones';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <FamiliaBuffo />
         <Capilla/>
        <Integrantes />
+       <Donaciones/>
     </div>
   );
 }

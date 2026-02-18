@@ -40,7 +40,7 @@ export const Navbar = () => {
                     <li className="UlNavbar_elemento"><button onClick={() => {irA("Familia-Buffo")}}>Familia Buffo</button></li>
                     <li className="UlNavbar_elemento"><button onClick={() => {irA("Capilla")}}>Capilla</button></li>
                     <li className="UlNavbar_elemento"><button onClick={() => {irA("Sobre-Nosotros")}}>Sobre Nosotros</button></li>
-                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Inicio")}}>Donaciones</button></li>
+                    <li className="UlNavbar_elemento"><button onClick={() => {irA("Donaciones")}}>Donaciones</button></li>
                 </ul>
             </nav>
         </div>

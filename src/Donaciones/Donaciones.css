@@ -1,0 +1,154 @@
+.suscripciones{
+  background:black;
+  color:white;
+  padding:100px 20px;
+  text-align:center;
+}
+
+/* TITULO */
+.suscripcionesTitulo{
+  font-size:42px;
+  margin-bottom:70px;
+  letter-spacing:1px;
+}
+
+/* GRID */
+.suscripcionesGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* CARD */
+.planCard{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:18px;
+  padding:35px 25px;
+  backdrop-filter:blur(6px);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* GLOW HOVER */
+.planCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.15),transparent);
+  opacity:0;
+  transition:.5s;
+}
+
+.planCard:hover::before{
+  opacity:1;
+}
+
+.planCard:hover{
+  transform:translateY(-12px) scale(1.02);
+  border-color:#3b82f6;
+}
+
+/* PLAN NAME */
+.planCard h3{
+  font-size:20px;
+  margin-bottom:5px;
+  letter-spacing:.5px;
+}
+
+/* PRECIO */
+.precio{
+  font-size:36px;
+  font-weight:bold;
+  color:#3b82f6;
+  display:block;
+  margin-bottom:25px;
+}
+
+/* LISTA */
+.planCard ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:30px;
+}
+
+.planCard li{
+  margin:10px 0;
+  opacity:.85;
+  font-size:15px;
+}
+
+/* BOTON */
+.planCard button{
+  border:none;
+  padding:12px 28px;
+  background:#3b82f6;
+  color:black;
+  font-weight:bold;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s;
+  letter-spacing:.5px;
+}
+
+.planCard button:hover{
+  background:#3b82f6;
+  transform:scale(1.05);
+}
+
+/* DESTACAR SPONSOR AUTOMATICO */
+.planCard h3:contains("Sponsor"){
+  color:#3b82f6;
+}
+
+.sponsor{
+  border:2px solid #3b82f6;
+  transform:scale(1.04);
+}
+
+.categoria{
+  font-size:28px;
+  margin:80px 0 40px;
+  letter-spacing:1px;
+  opacity:.9;
+}
+
+/* titulo sponsors mas premium */
+.sponsorTitulo{
+  color:#3b82f6;
+}
+
+/* separador visual */
+.categoria::after{
+  content:"";
+  display:block;
+  width:120px;
+  height:2px;
+  margin:15px auto 0;
+  background:rgba(255,255,255,.2);
+}
+
+.sponsorTitulo::after{
+  background:#3b82f6;
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .suscripcionesTitulo{
+    font-size:32px;
+  }
+
+  .precio{
+    font-size:28px;
+  }
+
+  .planCard{
+    padding:30px 20px;
+  }
+
+}

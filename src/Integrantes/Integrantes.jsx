@@ -73,7 +73,12 @@ export const Integrantes = () => {
             <img src={p.img} alt={p.nombre}/>
             <h3>{p.nombre}</h3>
             <p>{p.rol}</p>
-            <p><i  className="ig fa-brands fa-instagram"></i>  <a href={`https://instagram.com/${p.ig}`} target="_blank" rel="noopener noreferrer" className="ig-text"> {p.ig} </a></p>
+            <p>
+
+              <i  className={p.id  === 2 ? "fa-brands fa-spotify" : "ig fa-brands fa-instagram"}></i> 
+              <a href={ p.id === 2 ? "https://open.spotify.com/intl-es/artist/2GxB56cZ4WqPDdd4zKHPrX?si=XFJBRaTWR1mxoU_VretDMQ&nd=1&dlsi=cadf40b49d91425c" : `https://instagram.com/${p.ig}`} target="_blank" rel="noopener noreferrer" className={p.id === 2? "ig-textSpotify" : "ig-text"}> {p.ig} </a>
+            
+            </p>
           </div>
         ))}
       </div>
