@@ -48,8 +48,7 @@ export const Integrantes = () => {
     <div className="info">
       <h2>Equipo</h2>
       <p>
-        Somos un grupo creativo enfocado en desarrollar proyectos audiovisuales
-        y contenido digital. Nuestro objetivo es innovar y crear experiencias únicas.
+        Somos el equipo creativo detrás de Luz Eterna, un cortometraje inspirado en la vida y obra de Guido Buffo. Nuestro trabajo combina investigación histórica, sensibilidad artística y producción audiovisual para llevar al presente una historia real donde el arte, la ciencia y el amor trascienden el tiempo.
       </p>
     </div>
 

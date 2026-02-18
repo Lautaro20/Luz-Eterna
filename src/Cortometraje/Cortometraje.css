@@ -1,0 +1,62 @@
+.historiaIntro{
+  width:100%;
+  position:relative;
+}
+
+.historiaOverlay{
+  background:black;
+  padding:140px 20px 80px;
+}
+
+
+
+.historiaContent{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap: 80px;
+  align-items:start;
+}
+
+
+.historiaTexto{
+  max-width:520px;
+}
+
+
+.historiaTexto h2{
+  color:white;
+  font-size:2.5rem;
+  margin-bottom:70px;
+  line-height:1.2;
+}
+
+
+
+.historiaTexto p{
+  color:#ddd;
+  line-height:1.6;
+}
+
+.historiaImagen{
+  width:100%;
+  height: 60vh;
+  object-fit: cover;
+  overflow:hidden;
+}
+
+.historiaImagen img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius: 12px;
+}
+
+/* responsive */
+@media(max-width:768px){
+  .historiaContent{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
