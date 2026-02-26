@@ -7,17 +7,21 @@ import { Capilla } from './Capilla/Capilla';
 import { Ilustracion } from './Ilustracion/Ilustracion';
 import { Cortometraje } from './Cortometraje/Cortometraje';
 import { Donaciones } from './Donaciones/Donaciones';
+import { Fechasimportantes } from './Fechasimportantes/Fechasimportantes';
+import { Footer } from './Footer/Footer';
 
 function App() {
   return (
     <div>
-        <Navbar />
+        <Navbar/>
         <Ilustracion/>
         <Cortometraje/>
-        <FamiliaBuffo />
+        <Fechasimportantes/>
+        <FamiliaBuffo/>
         <Capilla/>
-       <Integrantes />
-       <Donaciones/>
+        <Integrantes />
+        <Donaciones/>
+        <Footer/>
     </div>
   );
 }
