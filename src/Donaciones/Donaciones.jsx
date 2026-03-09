@@ -3,7 +3,7 @@ import { planes } from "../Data/Dataplanes"
 
 export const Donaciones = () => {
 
-  const populares = planes.filter(p => p.plan === "Popular")
+  const populares = planes.filter(p => p.plan === "Colaboraciones")
   const sponsors = planes.filter(p => p.plan === "Sponsor")
 
   const renderCards = (lista) => (

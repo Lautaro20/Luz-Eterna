@@ -1,26 +1,26 @@
 export const planes = [
   {
-    plan: "Popular",
+    plan: "Colaboraciones",
     precio:"$5.000",
     beneficios:["Nombramiento redes","Sticker"]
   },
   {
-    plan: "Popular",
+    plan: "Colaboraciones",
     precio:"$10.000",
     beneficios:["Nombramiento redes","Sticker","Llavero"]
   },
   {
-    plan: "Popular",
+    plan: "Colaboraciones",
     precio:"$25.000",
     beneficios:["Nombramiento redes","Sticker","Llavero","Poster"]
   },
   {
-    plan: "Popular",
+    plan: "Colaboraciones",
     precio:"$50.000",
     beneficios:["Nombramiento redes y corto","Sticker","Llavero","Poster","Cena"]
   },
   {
-    plan: "Popular",
+    plan: "Colaboraciones",
     precio:"$100.000",
     beneficios:["Nombramiento redes y corto","Sticker","Llavero","Poster","1 día rodaje"]
   },

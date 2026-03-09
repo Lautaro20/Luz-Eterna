@@ -37,7 +37,7 @@ export const cardIntegrantes = [
 {
     id: 5,
     nombre: "Noe Carrizo",
-    rol: "Escenografia",
+    rol: "Productora y Diseñadora de Arte",
     ig: "noecarrizoasesora",
     img : img5,
 },
