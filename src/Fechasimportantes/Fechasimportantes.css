@@ -190,6 +190,280 @@
   right:-10px;
 }
 
+.introProyecto{
+  max-width:900px;
+  margin:0 auto 90px;
+  padding:50px 40px;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:18px;
+  backdrop-filter:blur(6px);
+
+  text-align:center;
+  line-height:1.7;
+  position:relative;
+  overflow:hidden;
+}
+
+.introProyecto::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.1),transparent);
+  opacity:.4;
+}
+
+.miniLabel{
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.6;
+  margin-bottom:15px;
+}
+
+.introProyecto p{
+  margin-bottom:18px;
+  opacity:.85;
+}
+
+.introProyecto p:first-child{
+  font-size:22px;
+  font-style:italic;
+  margin-bottom:25px;
+}
+
+.introProyecto p:first-child::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:2px;
+  margin:20px auto;
+  background:#3b82f6;
+}
+
+.objetivo strong{
+  color:#3b82f6;
+}
+
+.subtituloLista{
+  margin-top:50px;
+  margin-bottom:12px;
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.subtituloLista::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:2px;
+  margin:10px auto;
+  background:#3b82f6;
+  opacity:.6;
+}
+
+.listaUso{
+  list-style: disc;
+  list-style-position: inside;
+  padding:0;
+  margin:30px auto;
+  display:inline-block; /* 🔥 clave */
+  text-align:left;      /* 🔥 clave */
+}
+
+.listaUso li::marker{
+  color:#3b82f6;
+}
+
+.rodaje{
+  font-size:14px;
+  opacity:.7;
+}
+
+.cta{
+  margin-top:35px;
+  font-size:20px;
+  font-weight:bold;
+  color:#3b82f6;
+}
+
+.modalOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.modalContenido{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:18px;
+  padding:40px 30px;
+  text-align:center;
+  max-width:400px;
+  width:90%;
+  color:white;
+}
+
+.modalContenido h3{
+  margin-bottom:15px;
+}
+
+.aliasBox{
+  margin:20px 0;
+  padding:15px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+}
+
+.aliasBox strong{
+  display:block;
+  color:#3b82f6;
+  font-size:18px;
+  margin-top:5px;
+}
+
+.cerrarBtn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  background:#3b82f6;
+  color:black;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ========================= */
+/* FIX CLICKS (IMPORTANTE) */
+/* ========================= */
+
+.planCard::before{
+  pointer-events: none;
+}
+
+.introProyecto::before{
+  pointer-events: none;
+}
+
+/* asegurar boton arriba */
+.planCard button{
+  position:relative;
+  z-index:2;
+  cursor:pointer;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modalOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  animation:fadeIn .3s ease;
+}
+
+.modalContenido{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:18px;
+  padding:40px 30px;
+  text-align:center;
+  max-width:400px;
+  width:90%;
+  color:white;
+  animation:scaleIn .3s ease;
+}
+
+.modalContenido h3{
+  margin-bottom:15px;
+}
+
+.aliasBox{
+  margin:20px 0;
+  padding:15px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+}
+
+.aliasBox strong{
+  display:block;
+  color:#3b82f6;
+  font-size:18px;
+  margin-top:5px;
+}
+
+.cerrarBtn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  background:#3b82f6;
+  color:black;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes scaleIn{
+  from{
+    opacity:0;
+    transform:scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.modalTexto{
+  opacity:.8;
+}
+
+.titular{
+  margin-top:15px;
+  font-size:14px;
+  opacity:.6;
+}
+
+.nombreTitular{
+  font-size:15px;
+  margin-top:5px;
+  color:#ccc;
+}
+
+.datosExtra{
+  margin-top:12px;
+  font-size:13px;
+  opacity:.7;
+}
+
+.datosExtra span{
+  color:#3b82f6;
+}
 /* SOLO MOBILE */
 
 @media(max-width:768px){
